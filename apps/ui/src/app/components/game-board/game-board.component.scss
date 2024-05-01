@@ -1,0 +1,11 @@
+:host {
+    justify-content: center;
+    display: flex;
+}
+.game-board {
+    width: 80%;
+    padding: 20px;
+    .header {
+        display: flex;
+    }
+}

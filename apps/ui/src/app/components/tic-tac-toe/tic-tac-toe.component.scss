@@ -1,0 +1,56 @@
+.tic-toc-toe-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  .online-users {
+    width: 50%;
+    min-height: 275px;
+    background: linen;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    .header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+    }
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      li {
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+      }
+    }
+  }
+  table {
+    max-width: 500px;
+    max-height: 500px;
+    width: 85vw;
+    height: 85vw;
+    border-spacing: 4px 2px;
+  }
+  td {
+    padding: 0;
+    width: 20%;
+    height: 20%;
+  }
+  .cell {
+    font-size: 22px;
+    height: 100%;
+    width: 100%;
+  }
+  button {
+    cursor: pointer;
+    border: none;
+    color: #333;
+  }
+}
+

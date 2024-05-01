@@ -1,0 +1,47 @@
+<div class="tic-toc-toe-container">
+    @if(!currentPlayer && !playerAccepted) {
+    <div class="online-users">
+       <div class="header">Online Players <mat-icon (click)="goToBoard()">dashboard</mat-icon></div>
+       @if((onlinePlayers|availablePlayers:userId)?.length) {
+        <ul>
+            @for (player of onlinePlayers| availablePlayers: userId; track $index) {
+            <li>
+                <p>
+                    <b>{{player?.userName}}</b>
+                </p>
+                @if(userId !== player?._id && userId !== player?.from) {
+                    <button mat-raised-button color="warn" (click)="onSendPlayRequest(player)">
+                        {{!player?.sent ? 'Send a Request': 'Accept'}}
+                    </button>
+                }
+            </li>
+            }
+        </ul>
+       } @else {
+         <div>
+            No players are online to play. Please wait..
+         </div>
+       }
+    </div>
+    } @else {
+    <div>
+        <p>Your symbol is <b>{{currentPlayer?.symbol}}</b></p>
+        <p>You are playing with: <b>{{playerAccepted?.symbol}}:{{playerAccepted?.userName}}</b></p>
+        <p>{{currentPlayer?.urTurn ? 'Please click, its your turn': 'Please wait, its your opponent turn'}}</p>
+    </div>
+    <table class="center">
+        @for (item of ticToeRows | keyvalue; track $index) {
+        <tr>
+            @for(column of item.value; track $index) {
+            <td>
+                <button type="button" class="cell" (click)="onSquareClick(column)"
+                    [disabled]="column?.label">{{column?.label}}</button>
+            </td>
+            }
+        </tr>
+        }
+    </table>
+    }
+
+
+</div>

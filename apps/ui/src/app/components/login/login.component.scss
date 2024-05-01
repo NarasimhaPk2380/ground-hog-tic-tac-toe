@@ -1,0 +1,24 @@
+:host {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .mat-mdc-card-header {
+        margin-bottom: 20px;
+        justify-content : center;
+    }
+}
+.login-container {
+    .login-form {
+        display: flex;
+        flex-direction: column;
+        .btn-block {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;    
+            .login-btn {
+                width: 50%;
+            }
+        }
+    }
+}
